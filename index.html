@@ -7,36 +7,38 @@
     <title>Local Storage</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anek+Tamil:wght@100..800&family=Libre+Barcode+128+Text&family=Rationale&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Tamil:wght@100..800&family=Libre+Barcode+128+Text&family=Rationale&family=Russo+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/skeleton.css">
     <link rel="stylesheet" href="css/custom.css">
 </head>
 <body>
     <nav class="navbar">
-        <h5 class="rationale-regular">Local Storage</h5>
+        <h5 class="russo-one-regular uppercase">LocalStorage!</h5>
     </nav>
     <div id="contenido">
         <div class="container">
 
             <div class="row">
-                <div class="six columns anek-tamil-regular">
-                    <label for="tweet">Post</label>
-                    <form  id="formulario" class="anek-tamil-regular">
-                            <label for="tweet"></label>
-                            <textarea id="tweet" class="u-full-width"></textarea>
-                            <input type="submit" class="button u-full-width button-primary" value="Agregar">
+                <div class="six columns anek-tamil-regular flex">
+                    <label for="post">Post</label>
+                    <form  id="formulario" class="anek-tamil-regular flex justify-end">
+                            <label for="post"></label>
+                            <textarea id="post" class="u-full-width"></textarea>
+                            <input type="submit" class="button flex text-default" value="Crear tu post!">
                     </form>
                 </div>
                 <div class="six columns anek-tamil-regular">
-                    <h2>Mis posteos</h2>
-                    <div id="lista-tweets"></div>
+                    <h3>Mis posteos</h3>
+                    <div id="lista-posteos"></div>
                 </div>
             </div>
 
         </div>
     </div> <!--#contenido-->
-
+<footer class=" u-full-width">
+    <p  class="text-center pd-10 anek-tamil-regular mg-btm-0"> &copy; Todos los derechos reservados Lince. </p>
+</footer>
     <script src="js/app.js"></script>
 </body>
 </html>
