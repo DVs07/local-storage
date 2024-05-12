@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Local Storage</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Tamil:wght@100..800&family=Libre+Barcode+128+Text&family=Rationale&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+    <nav class="navbar">
+        <h5 class="rationale-regular">Local Storage</h5>
+    </nav>
+    <div id="contenido">
+        <div class="container">
+
+            <div class="row">
+                <div class="six columns anek-tamil-regular">
+                    <label for="tweet">Post</label>
+                    <form  id="formulario" class="anek-tamil-regular">
+                            <label for="tweet"></label>
+                            <textarea id="tweet" class="u-full-width"></textarea>
+                            <input type="submit" class="button u-full-width button-primary" value="Agregar">
+                    </form>
+                </div>
+                <div class="six columns anek-tamil-regular">
+                    <h2>Mis posteos</h2>
+                    <div id="lista-tweets"></div>
+                </div>
+            </div>
+
+        </div>
+    </div> <!--#contenido-->
+
+    <script src="js/app.js"></script>
+</body>
+</html>
