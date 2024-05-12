@@ -1,3 +1,6 @@
+body{
+    background-color: rgb(241, 242, 243);
+}
 h1, h2 {
     text-align: center;
 }
@@ -57,4 +60,16 @@ font-variation-settings:"wdth" 100;
 }
 .fz-2rem{
     font-size: 2rem;
+}
+input[type="submit"] {
+    background-color: #e1993a !important;
+    color: white !important;
+    border-color: #e1993a!important;
+    
+}
+
+input[type="submit"]:hover {
+    background-color: #d9971d !important;
+    color: rgb(31 41 55) !important;
+    border-color: rgb(31 41 55) !important;
 }
