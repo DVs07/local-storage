@@ -17,12 +17,12 @@ h1, h2 {
 }
 
 .error {
-    background-color: red;
+    background-color: rgb(28, 140, 252);
     text-align: center;
     padding: 10px;
     text-transform: uppercase;
     font-weight: bold;
-    max-width: 400px;
+    /* max-width: 400px; */
     margin: 0 auto;
     color: white;
 }
@@ -53,6 +53,9 @@ font-variation-settings:"wdth" 100;
 }
 .uppercase {
     text-transform: uppercase;
+}
+.font-weight-bold {
+    font-weight: bold;
 }
 .text-center {
     text-align: center;
@@ -85,6 +88,9 @@ input[type="submit"]:hover {
 }
 .text-default{
     text-transform: none !important;
+}
+textarea{
+    height: 105px;
 }
 footer{
     background-color: rgb(17, 88, 201);

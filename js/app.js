@@ -17,5 +17,34 @@ function eventListeners() {
 function agregarPost(e) {
 
     e.preventDefault();
-    console.log('agregando posteo...');
+
+    // Textarea donde se escribe el post
+    const post = document.querySelector('#post').value;
+
+    console.log(post);// Envio a consola el post para visualizarlo.
+
+    // Validar
+    if(post === '') {
+        mostrarError('Que picardia 😎 , no podes poner un post vacio 🙀!');
+        return; // Detener la ejecucion
+    }
+}
+
+// Mostrar mensaje de error
+function mostrarError(error) {
+    // console.log(error);
+    const mensajeError = document.createElement('p');
+    mensajeError.textContent = error; // Asignar el error que llega por parametro.
+    mensajeError.classList.add('error');
+    mensajeError.classList.add('u-full-width');
+
+
+    // Insertar en el DOM
+    const contenedorError = document.querySelector('#formulario');
+    contenedorError.appendChild(mensajeError);
+
+    // Eliminar el error luego de 3 segundos
+    setTimeout(() => {
+        mensajeError.remove();
+    }, 3000);
 }
