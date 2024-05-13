@@ -8,14 +8,18 @@ h1, h2 {
 #contenido {
     margin-top: 40px;
 }
-.borrar-tweet,
-.borrar-tweet:hover {
+.borrar-post{
     float: right;
     cursor: pointer;
-    color: red;
+    color: gray;
+}
+.borrar-post:hover {
+    color: black;
     font-weight: bold;
 }
-
+.far, .fa-trash-alt {
+    line-height: 1.7 !important;
+}
 .error {
     background-color: rgb(28, 140, 252);
     text-align: center;

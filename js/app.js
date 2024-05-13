@@ -15,7 +15,7 @@ function eventListeners() {
         posts = JSON.parse(localStorage.getItem('posts')) || []; // Si no hay posts, el arreglo de posts es vacio.
 
         console.log(posts);
-        
+
         crearHTML();
     })
 
@@ -81,11 +81,26 @@ function crearHTML() {
 
     if(posts.length > 0){
         posts.forEach(post => {
+            
+            // Agregar el boton eliminar
+            const btnEliminar = document.createElement('a');
+            const icono = document.createElement('i');
+            btnEliminar.appendChild(icono);
+            icono.classList.add('far','fa-trash-alt', 'borrar-post');
+
+            // Agregar la funcion de eliminar
+            btnEliminar.onclick = () => {
+                borrarPost(post.id);
+            }
+
             // Crear el elemento li, contenedor del post.
             const li = document.createElement('li');
 
             // Añadir el texto
             li.innerText = post.post;
+
+            // Añadir el boton
+            li.appendChild(btnEliminar);
 
             // Insertarlo en la lista de posteos
             listaPosteos.appendChild(li);
@@ -98,6 +113,15 @@ function crearHTML() {
 // Sincronizar Storage. Agrega los posts al LocalStorage
 function sincronizarStorage() {
     localStorage.setItem('posts', JSON.stringify(posts));
+}
+
+// Elimina un post
+function borrarPost(id) {
+    // console.log('Eliminando...', id);
+    posts = posts.filter(post => post.id !== id); // Filtrar el arreglo de posts, para que solo quede el post que no coincida con el id que se pasa por parametro.
+    // console.log(posts);
+    crearHTML(); // Luego de borrar, volvemos a crear el HTML.
+    
 }
 
 // Limpia HTML
