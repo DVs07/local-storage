@@ -7,7 +7,17 @@ let posts = [];
 // Eventos
 eventListeners();
 function eventListeners() {
+    // Agregar un post
     formulario.addEventListener('submit', agregarPost);
+
+    // Cuando el documento esta listo
+    document.addEventListener('DOMContentLoaded', () => {
+        posts = JSON.parse(localStorage.getItem('posts')) || []; // Si no hay posts, el arreglo de posts es vacio.
+
+        console.log(posts);
+        
+        crearHTML();
+    })
 
 }
 
@@ -81,6 +91,13 @@ function crearHTML() {
             listaPosteos.appendChild(li);
         })
     }
+
+    sincronizarStorage();
+}
+
+// Sincronizar Storage. Agrega los posts al LocalStorage
+function sincronizarStorage() {
+    localStorage.setItem('posts', JSON.stringify(posts));
 }
 
 // Limpia HTML
