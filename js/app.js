@@ -1,6 +1,6 @@
 // Variables
 const formulario = document.querySelector('#formulario');
-const listaTweets = document.querySelector('#lista-posteos');
+const listaPosteos = document.querySelector('#lista-posteos');
 let posts = [];
 
 
@@ -28,6 +28,21 @@ function agregarPost(e) {
         mostrarError('Que picardia 😎 , no podes poner un post vacio 🙀!');
         return; // Detener la ejecucion
     }
+    // console.log('Agregando post...');
+
+    const postObject = {
+        id: Date.now(),
+        post
+    }
+    // Agregar al arreglo de posts
+    posts = [...posts, postObject]; // Spread Operator. Copiar todos los elementos de un arreglo. En este caso, el arreglo vacio. Luego, agregar el nuevo post.  
+    // console.log(posts);
+
+    // Una vez agregado, lo insertamos en el HTML
+    crearHTML();
+
+    // Reiniciar el formulario
+    formulario.reset();
 }
 
 // Mostrar mensaje de error
@@ -47,4 +62,30 @@ function mostrarError(error) {
     setTimeout(() => {
         mensajeError.remove();
     }, 3000);
+}
+
+// Muestra los  posts
+function crearHTML() {
+
+    limpiarHTML();
+
+    if(posts.length > 0){
+        posts.forEach(post => {
+            // Crear el elemento li, contenedor del post.
+            const li = document.createElement('li');
+
+            // Añadir el texto
+            li.innerText = post.post;
+
+            // Insertarlo en la lista de posteos
+            listaPosteos.appendChild(li);
+        })
+    }
+}
+
+// Limpia HTML
+function limpiarHTML() {
+    while (listaPosteos.firstChild) {
+        listaPosteos.removeChild(listaPosteos.firstChild);
+    }
 }
