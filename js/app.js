@@ -14,14 +14,10 @@ function eventListeners() {
     document.addEventListener('DOMContentLoaded', () => {
         posts = JSON.parse(localStorage.getItem('posts')) || []; // Si no hay posts, el arreglo de posts es vacio.
 
-        console.log(posts);
-
         crearHTML();
     })
 
 }
-
-
 
 // Funciones
 function agregarPost(e) {
@@ -31,14 +27,12 @@ function agregarPost(e) {
     // Textarea donde se escribe el post
     const post = document.querySelector('#post').value;
 
-    console.log(post);// Envio a consola el post para visualizarlo.
 
     // Validar
     if(post === '') {
         mostrarError('Que picardia 😎 , no podes poner un post vacio 🙀!');
         return; // Detener la ejecucion
     }
-    // console.log('Agregando post...');
 
     const postObject = {
         id: Date.now(),
@@ -46,7 +40,6 @@ function agregarPost(e) {
     }
     // Agregar al arreglo de posts
     posts = [...posts, postObject]; // Spread Operator. Copiar todos los elementos de un arreglo. En este caso, el arreglo vacio. Luego, agregar el nuevo post.  
-    // console.log(posts);
 
     // Una vez agregado, lo insertamos en el HTML
     crearHTML();
@@ -57,7 +50,7 @@ function agregarPost(e) {
 
 // Mostrar mensaje de error
 function mostrarError(error) {
-    // console.log(error);
+
     const mensajeError = document.createElement('p');
     mensajeError.textContent = error; // Asignar el error que llega por parametro.
     mensajeError.classList.add('error');
@@ -117,9 +110,9 @@ function sincronizarStorage() {
 
 // Elimina un post
 function borrarPost(id) {
-    // console.log('Eliminando...', id);
+    
     posts = posts.filter(post => post.id !== id); // Filtrar el arreglo de posts, para que solo quede el post que no coincida con el id que se pasa por parametro.
-    // console.log(posts);
+    
     crearHTML(); // Luego de borrar, volvemos a crear el HTML.
     
 }
